@@ -7,16 +7,16 @@
 
 <!-- versionCode is optional and Android only -->
 
-  <name>Shitpace</name>
+  <name>KFL-NotRush</name>
 
   <description>
-      This is not inspired from the space invaders.
+      This game tells the story of the NoteRush in KFL in it's wild life.
   </description>
 
   <author href="http://ahmetakifkayaprojeblog.blogspot.com/" email="ahmetakifkaya@hotmail.com">
       Ahmet Akif KAYA
   </author>
 
-  <icon src="Shitpace/IMAGES/icon.PNG" />
+  <icon src="KFL-NotRush/IMAGES/icon.PNG" />
 
 </widget>
