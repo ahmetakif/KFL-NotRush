@@ -10,13 +10,13 @@
   <name>KFL-NotRush</name>
 
   <description>
-      Bu oyun bir dramin hikaysidir.
+      Bu oyun bir dramin hikayesidir.
   </description>
 
   <author href="http://ahmetakifkayaprojeblog.blogspot.com/" email="ahmetakifkaya@hotmail.com">
       Ahmet Akif KAYA
   </author>
 
-  <icon src="KFL-NotRush/IMAGES/icon.png" />
+  <icon src="IMAGES/icon.png" />
 
 </widget>
