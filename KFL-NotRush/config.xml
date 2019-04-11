@@ -7,16 +7,16 @@
 
 <!-- versionCode is optional and Android only -->
 
-  <name>KFL-NoteRush</name>
+  <name>KFL-NotRush</name>
 
   <description>
-      Bu oyun bir dramın hikaysidir.
+      Bu oyun bir dramin hikaysidir.
   </description>
 
   <author href="http://ahmetakifkayaprojeblog.blogspot.com/" email="ahmetakifkaya@hotmail.com">
       Ahmet Akif KAYA
   </author>
 
-  <icon src="Shitpace/IMAGES/icon.PNG" />
+  <icon src="KFL-NotRush/IMAGES/icon.PNG" />
 
 </widget>
