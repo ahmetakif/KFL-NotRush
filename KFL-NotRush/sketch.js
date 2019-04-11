@@ -18,11 +18,14 @@ var rightarrowst = 0;
 var resetbuttonst = 0;
 var mousepos = 0;
 
+var shoot;
+var death;
+
 function preload() {
-  shippic = loadImage("IMAGES/spaceship.png");
-  alienpic = loadImage("IMAGES/alien.png");
-  cavitpic = loadImage("IMAGES/cavit.png");
-  kflogrencipic = loadImage("IMAGES/kflogrenci.png");
+  shippic = loadImage("IMAGES/cavit.png");
+  alienpic = loadImage("IMAGES/kflogrenci.png");
+  shoot = loadSound("SOUNDS/shoot.mp3");
+  death = loadSound("SOUNDS/death.mp3");
 }
 
 function setup() {
@@ -112,10 +115,10 @@ function draw() {
     fill(255, 0, 0);
     textSize(16);
     textAlign(CENTER);
-    text ("GAME OVER! Press the BIG RED RESET BUTTON or wait.", width / 2, height - 100);
+    text ("Öğrenciler seni müdüre ispikledi, buraya kadarmış.", width / 2, height - 100);
     textSize(16);
     textAlign(RIGHT);
-    text("Aliens:", width - 150, 50);
+    text("Nerds:", width - 150, 50);
     text(scoretosee, width - 100, 50);
     text("Kill:", width - 150, 70);
     text(killtosee, width - 100, 70);
@@ -138,15 +141,15 @@ function draw() {
     fill(0, 255, 0);
     textSize(16);
     textAlign(RIGHT);
-    text("Ogrenci:", width - 150, 50);
+    text("Aliens:", width - 150, 50);
     text(score, width - 100, 50);
     text("Kill:", width - 150, 70);
     text(kill, width - 100, 70);
     text("Score:", width - 150, 90);
     text(realscore, width - 100, 90);
     if (score < 200) {
-      text("KFL - NOT RUSH", width/2, 100);
-      text("Not ile gozu donmus ogrencileri mudure ulasmadan durdur.", width - 100, 200);
+      text("KFL-NoteRush", width/2, 100);
+      text("Öğrencileri müdüre ulaşmadan durdur.", width - 100, 200);
     }
   }
 }
@@ -165,6 +168,7 @@ function startgame() {
 }
 
 function gameOver() {
+  death.play();
   gameover = 1;
   clearInterval(aliengenvar);
   scoretosee = score;
@@ -252,10 +256,8 @@ class Alien {
   }
   show() {
     noStroke();
-    image(kflogrencipic, this.x, this.y, this.d, this.d);
-    this.xban = this.x + width / 45;
-    this.yban = this.y + height / 10;
-    text("Hocam NOT verin!", this.xban, this.yban);
+    image(alienpic, this.x, this.y, this.d, this.d);
+    text("Hocam not verin!", this.x, this.y);
   }
 }
 
@@ -272,6 +274,7 @@ class Ship {
   shoot() {
     let bb = new Bullet(this.x + this.d / 2 + this.d / 8, this.y, 10);
     bullets.push(bb);
+    shoot.play();
   }
   move(velocityX, velocityY) {
     this.x = this.x + velocityX;
@@ -291,9 +294,7 @@ class Ship {
     }
   }
   show() {
-    image(cavitpic, this.x, this.y, this.d, this.d);
-    this.xban = this.x + width / 45;
-    this.yban = this.y + height / 10;
-    text("CavitReis", this.xban, this.yban);
+    image(shippic, this.x, this.y, this.d, this.d);
+    text("CavitReis", this.x, this.y);
   }
 }
